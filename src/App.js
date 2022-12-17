@@ -1,10 +1,15 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  var  ob={
+    name: 'Tamil',
+    age: 30,
+    tel:123456,
+  }
   return (
     <div className="App">
-     first page
+    {ob.name}
     </div>
   );
 }
