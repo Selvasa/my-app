@@ -1,17 +1,23 @@
-// import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import { Myconst } from './contaxt';
+import { NewApp } from './newapp';
 
-function App() {
-  var  ob={
-    name: 'Tamil',
-    age: 30,
-    tel:123456,
+export function App() {
+  var [count, setCount] = React.useState(0);
+  var Increment = () => {
+    setCount(count + 1);
   }
+  var Decrement = () => {
+    setCount(count - 1);
+  }
+
   return (
-    <div className="App">
-    {ob.name}
-    </div>
+    <Myconst.Provider value={{ count: count, Increment: Increment, Decrement: Decrement }}>
+      <NewApp />
+    </Myconst.Provider>
+
   );
 }
 
-export default App;
+
